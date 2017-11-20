@@ -15,7 +15,8 @@
   export default {
     name: 'index',
     data() {
-      return {}
+      return {
+      }
     },
     components: {
       'left-menu': leftMenu
