@@ -1,10 +1,7 @@
 <template>
   <div>
-    <Menu active-name="1-2" theme="dark" width="auto" :open-names="['1']">
-      <div class="layout-logo-left">
-        <div class="logo-font"><h2>Black_blog后台管理系统</h2></div>
-      </div>
-      <hr/>
+    <div class="layout-logo">Black-Blog</div>
+    <Menu active-name="1-2" theme="dark" width="auto" :open-names="['1']" style="margin-top: 30px">
       <menu-more :menuData="menuData"></menu-more>
     </Menu>
   </div>
@@ -33,17 +30,17 @@
     }
   }
 </script>
-<style scoped>
-  .logo-font {
-    color: #fff;
-  }
-  .layout-logo-left{
-    width: 90%;
-    height: 30px;
-    border-radius: 3px;
-    margin: 15px auto;
-  }
-  hr {
-    border: 0.5px solid #666;
+<style lang="less" scoped>
+  @heights: 30px;
+  .layout-logo {
+    width: 80%;
+    height: @heights;
+    background: #f5f7f9;
+    border-radius: @heights / 10;
+    position: relative;
+    top: @heights / 2;
+    text-align: center;
+    line-height: @heights;
+    margin: auto;
   }
 </style>
