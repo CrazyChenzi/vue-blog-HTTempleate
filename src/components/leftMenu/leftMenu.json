@@ -1,0 +1,41 @@
+[
+  {
+    "submenuId": "1",
+    "title": {
+      "icon": "ios-navigate",
+      "context": "内容管理"
+    },
+    "Option": [
+      {
+        "id": "1-1",
+        "context": "内容"
+      }
+    ]
+  },
+  {
+    "submenuId": "2",
+    "title": {
+      "icon": "ios-navigate",
+      "context": "内容管理"
+    },
+    "Option": [
+      {
+        "id": "2-1",
+        "context": "内容1"
+      }
+    ]
+  },
+  {
+    "submenuId": "3",
+    "title": {
+      "icon": "ios-navigate",
+      "context": "内容管理"
+    },
+    "Option": [
+      {
+        "id": "3-1",
+        "context": "内容2"
+      }
+    ]
+  }
+]
