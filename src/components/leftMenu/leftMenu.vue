@@ -5,27 +5,21 @@
         <div class="logo-font"><h2>Black_blog后台管理系统</h2></div>
       </div>
       <hr/>
-      <template v-for="item in menuData">
-        <Submenu :name="item.submenuId">
-          <template slot="title">
-            <Icon :type="item.title.icon"></Icon>
-            {{ item.title.context }}
-          </template>
-          <template v-for="option in item.Option">
-            <MenuItem :name="option.id">{{ option.context }}</MenuItem>
-          </template>
-        </Submenu>
-      </template>
+      <menu-more :menuData="menuData"></menu-more>
     </Menu>
   </div>
 </template>
 <script>
+  import menu from './menu/menu'
   export default {
     name: 'leftMenu',
     data() {
       return {
         menuData: []
       }
+    },
+    components: {
+      'menu-more': menu    
     },
     created() {
       this.$http.get('http://localhost:8080/src/components/leftMenu/leftMenu.json').then(response => {
