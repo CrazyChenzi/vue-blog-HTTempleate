@@ -12,8 +12,11 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "highlight.js": "^9.12.0",
     "iview": "^2.7.3",
+    "tinymce": "^4.7.1",
     "vue": "^2.5.2",
+    "vue-quill-editor": "^2.3.3",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="layout-logo">Black-Blog</div>
-    <Menu active-name="1-2" theme="dark" width="auto" :open-names="['1']" style="margin-top: 30px">
+    <Menu :active-name="$router.currentRoute.path" theme="dark" width="auto" :open-names="[$router.currentRoute.path.split('/')[1]]" 
+    style="margin-top: 30px" @on-select="changePage">
       <menu-more :menuData="menuData"></menu-more>
     </Menu>
   </div>
@@ -25,8 +26,13 @@
         console.log(error)
       })
     },
+    mounted() {
+      console.log(this.$router.currentRoute.path.split('/')[1])
+    },
     methods: {
-      
+      changePage: function (name) {
+        this.$router.push({ path: name })
+      }
     }
   }
 </script>

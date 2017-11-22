@@ -7,7 +7,7 @@
           {{ item.title.context }}
         </template>
         <template v-for="option in item.Option">
-          <MenuItem :name="option.id">{{ option.context }}</MenuItem>
+          <MenuItem :name="option.id"><span>{{ option.context }}</span></MenuItem>
         </template>
       </Submenu>
     </template>

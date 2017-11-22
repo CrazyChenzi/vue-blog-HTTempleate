@@ -31,7 +31,7 @@
 </script>
 <style scoped>
   .index-router {
-    background: #F0F0EF;
+    background: #f3f3f3;
     height: calc(100vh - 60px);
   }
 </style>

@@ -1,14 +1,30 @@
 [
   {
-    "submenuId": "1",
+    "submenuId": "index",
     "title": {
       "icon": "ios-navigate",
       "context": "内容管理"
     },
     "Option": [
       {
-        "id": "1-1",
-        "context": "内容"
+        "id": "/index/article",
+        "context": "文章管理"
+      },
+      {
+        "id": "/index/resource",
+        "context": "资源管理"
+      },
+      {
+        "id": "/index/time",
+        "context": "时光轴管理"
+      },
+      {
+        "id": "/index/articleRecycle",
+        "context": "文章回收站"
+      },
+      {
+        "id": "/index/resourceRecycle",
+        "context": "资源回收站"
       }
     ]
   },
