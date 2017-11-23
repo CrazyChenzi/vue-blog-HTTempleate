@@ -32,6 +32,10 @@ export default new Router({
         {
           path: 'time',
           component: resolve => require(['@/views/timeManagement/timeManagement'], resolve)
+        },
+        {
+          path: 'editMD',
+          component: resolve => require(['@/views/MD/MD'], resolve)
         }
       ]
     }

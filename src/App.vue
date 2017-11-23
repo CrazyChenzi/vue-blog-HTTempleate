@@ -11,6 +11,8 @@ export default {
 </script>
 
 <style>
-#app {
-}
+  @import './styles/container.less';
+  #app {
+    overflow: hidden;
+  }
 </style>

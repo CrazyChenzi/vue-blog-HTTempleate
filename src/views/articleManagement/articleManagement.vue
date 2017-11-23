@@ -1,27 +1,18 @@
 <template>
   <div>
     <div class="container">
-      <Button type="primary" size="small" class="container-add">新增</Button>
+      <Button type="primary" size="small" class="container-add" @click="editMD">新增</Button>
       <Table :columns="columns1" :data="data1" size="small" border></Table>
       <Page :total="100" show-elevator show-sizer class="container-page"></Page>
-      <quill-editor ref="myTextEditor" :content="announcementForm.fContent" :config="editorOption" @change="onEditorChange($event)"></quill-editor>
-      <Card>
-        <UE :config="config" ref="ueditor"></UE>
-      </Card>
     </div>
-    <div v-html="announcementForm.fContent"></div>
-    <Button @click="save">保存</Button>
   </div>
 </template>
 <script>
-  // const tinymce = require('tinymce');
-  import UE from '../../components/UE/UE'
-  import hljs from '../../../static/highlight/highlight.js'
-  import '../../../static/highlight/tomorrow-night-eighties.css'
+  import openMD from '../../mixins/openMD.js'
   export default {
     name: 'articleManagement',
+    mixins: [ openMD ],
     components: {
-      'UE': UE
     },
     data () {	
       return {
@@ -128,53 +119,20 @@
             slot: 'close',
             name: '关闭'
           }
-        ],
-        announcementForm: {
-          fType: 1, // 类型
-          fTitle: '', // 标题
-          fContent: '' // 内容
-          // fStartSendTime: '',
-        },
-        editorOption: {
-
-        },
-        config: {
-
-        }
+        ]
       }
+    },
+    computed: {
     },
     mounted() {
-      hljs.initHighlightingOnLoad()
-      console.log(this.$refs.ueditor)
     },
     methods: {
-      onEditorChange({ html }) {
-        this.announcementForm.fContent = html;
-        // console.log(editor)
-        // console.log(html)
-        // this.getContent()
-        // console.log(text)
-      },
-      getContent: function(){
-        this.announcementForm.fContent = this.$refs.ueditor.getUEContent()
-        // console.log(content)
-      },
-      save: function() {
-        this.getContent()
-      }
+
     },
     destroyed() {
     }
   }
 </script>
 <style scoped>
-  .container {
-    padding: 10px 20px;
-  }
-  .container-add {
-    margin-bottom: 10px;
-  }
-  .container-page {
-    margin-top: 10px;
-  }
+
 </style>

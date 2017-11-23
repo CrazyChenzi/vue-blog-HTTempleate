@@ -3,31 +3,37 @@
     <div class="layout-logo">Black-Blog</div>
     <Menu :active-name="$router.currentRoute.path" theme="dark" width="auto" :open-names="[$router.currentRoute.path.split('/')[1]]" 
     style="margin-top: 30px" @on-select="changePage">
-      <menu-more :menuData="menuData"></menu-more>
+      <template v-for="item in menuData">
+        <Submenu :name="item.submenuId">
+          <template slot="title">
+            <Icon :type="item.title.icon"></Icon>
+            {{ item.title.context }}
+          </template>
+          <template v-for="option in item.Option">
+            <MenuItem :name="option.id"><span>{{ option.context }}</span></MenuItem>
+          </template>
+        </Submenu>
+      </template>
     </Menu>
   </div>
 </template>
 <script>
-  import menu from './menu/menu'
   export default {
     name: 'leftMenu',
     data() {
       return {
-        menuData: []
       }
     },
-    components: {
-      'menu-more': menu    
+    props: {
+      menuData: {
+        type: Array
+      }
     },
     created() {
-      this.$http.get('http://localhost:8080/src/components/leftMenu/leftMenu.json').then(response => {
-        this.menuData = response.data
-      }).catch(error => {
-        console.log(error)
-      })
+    },
+    components: {
     },
     mounted() {
-      console.log(this.$router.currentRoute.path.split('/')[1])
     },
     methods: {
       changePage: function (name) {

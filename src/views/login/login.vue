@@ -51,6 +51,12 @@
             this.$Message.success('登录成功!')
             this.$Loading.finish()
             this.$router.push({ path: '/index' })
+            this.$http.get('http://localhost:8080/src/components/leftMenu/leftMenu.json').then(response => {
+              localStorage.menuData = JSON.stringify(response.data)
+              // this.menuData = response.data
+            }).catch(error => {
+              console.log(error)
+            })
           } else {
             this.$Message.error('登录失败!')
             this.$Loading.error()
