@@ -50,18 +50,17 @@
     },
     methods: {
       handleChange(name) {
-        alert(name)
-        let willpush = true;
-        if (this.beforePush !== undefined) {
-          if (!this.beforePush(name)) {
-            willpush = false;
-          }
-        }
-        if (willpush) {
-          this.$router.push({
-            name: name
-          });
-        }
+        // let willpush = true;
+        // if (this.beforePush !== undefined) {
+        //   if (!this.beforePush(name)) {
+        //     willpush = false;
+        //   }
+        // }
+        // if (willpush) {
+        //   this.$router.push({
+        //     name: name
+        //   });
+        // }
         this.$emit('on-change', name);
       }
     }

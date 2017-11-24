@@ -1,56 +1,62 @@
 [
   {
-    "submenuId": "index",
-    "title": {
-      "icon": "ios-navigate",
-      "context": "内容管理"
-    },
-    "Option": [
+    "name": "index",
+    "title": "内容管理",
+    "icon": "ios-navigate",
+    "children": [
       {
-        "id": "/index/article",
-        "context": "文章管理"
+        "name": "/index/article",
+        "title": "文章管理"
       },
       {
-        "id": "/index/resource",
-        "context": "资源管理"
+        "name": "/index/resource",
+        "title": "资源管理"
       },
       {
-        "id": "/index/time",
-        "context": "时光轴管理"
+        "name": "/index/time",
+        "title": "时光轴管理"
       },
       {
-        "id": "/index/articleRecycle",
-        "context": "文章回收站"
+        "name": "/index/articleRecycle",
+        "title": "文章回收站"
       },
       {
-        "id": "/index/resourceRecycle",
-        "context": "资源回收站"
+        "name": "/index/resourceRecycle",
+        "title": "资源回收站"
       }
     ]
   },
   {
-    "submenuId": "2",
-    "title": {
-      "icon": "ios-navigate",
-      "context": "内容管理"
-    },
-    "Option": [
+    "name": "index1",
+    "title": "内容管理2",
+    "icon": "ios-navigate",
+    "children": [
       {
-        "id": "2-1",
-        "context": "内容1"
+        "name": "2-1",
+        "title": "内容1"
+      },
+      {
+        "name": "2-1",
+        "title": "内容1"
+      },
+      {
+        "name": "2-1",
+        "title": "内容1"
+      },
+      {
+        "name": "2-1",
+        "title": "内容1"
       }
     ]
   },
   {
-    "submenuId": "3",
-    "title": {
-      "icon": "ios-navigate",
-      "context": "内容管理"
-    },
-    "Option": [
+    "name": "index2",
+    "title": "内容管理3",
+    "icon": "ios-navigate",
+    "children": [
       {
-        "id": "3-1",
-        "context": "内容2"
+        "name": "3-1",
+        "title": "内容2"
       }
     ]
   }

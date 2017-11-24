@@ -3,16 +3,16 @@
 </style>
 
 <template>
-  <Menu ref="sideMenu" :active-name="$route.name" :open-names="openNames" :theme="menuTheme" width="auto" @on-select="changeMenu">
+  <Menu ref="sideMenu" :active-name="$router.currentRoute.path" :open-names="openNames" :theme="menuTheme" width="auto" @on-select="changeMenu">
     <template v-for="item in menuList">
       <MenuItem v-if="item.children.length<=1" :name="item.children[0].name" :key="item.path">
         <Icon :type="item.icon" :size="iconSize" :key="item.path"></Icon>
-        <span class="layout-text" :key="item.path">{{ itemTitle(item) }}</span>
+        <span class="layout-text" :key="item.path">{{ item.title }}</span>
       </MenuItem>
       <Submenu v-if="item.children.length > 1" :name="item.name" :key="item.path">
           <template slot="title">
             <Icon :type="item.icon" :size="iconSize"></Icon>
-            <span class="layout-text">{{ itemTitle(item) }}</span>
+            <span class="layout-text">{{ item.title }}</span>
           </template>
           <template v-for="child in item.children">
             <MenuItem :name="child.name" :key="child.name">
@@ -42,12 +42,11 @@
     },
     methods: {
       changeMenu(active) {
-        alert(active)
         this.$emit('on-change', active);
       },
       itemTitle(item) {
         if (typeof item.title === 'object') {
-          return this.$t(item.title.i18n);
+          // return this.$t(item.title.i18n);
         } else {
           return item.title;
         }

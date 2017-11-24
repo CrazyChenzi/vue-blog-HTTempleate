@@ -1,7 +1,7 @@
 <template>
   <div id="editor">
     <Card>
-      <mavon-editor :ishljs="true" v-model="mdEditor" code_style="solarized-dark" @save="saveHtml"></mavon-editor>
+      <mavon-editor :ishljs="true" v-model="mdEditor" code_style="solarized-dark" @save="saveHtml" @fullscreen="fullReturn"></mavon-editor>
     </Card>
   </div>
 </template>
@@ -20,6 +20,9 @@
     methods: {
       saveHtml: function(render, value) {
         console.log(value)
+      },
+      fullReturn: function(status, value) {
+        console.log(status, value)
       }
     }
   }
@@ -28,6 +31,10 @@
   #editor {
   }
   #editor >>> .markdown-body {
-    height: calc(100vh - 94px);
+    /* height: calc(60vh); */
+  }
+  .v-note-wrapper.fullscreen {
+    position: relative;
+    height: calc(100vh - 114px)
   }
 </style>
